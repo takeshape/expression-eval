@@ -7,8 +7,8 @@ declare interface EvaluateOptions {
 }
 declare function evaluate(_node: jsep.Expression, context: object, options?: EvaluateOptions): any;
 declare function evalAsync(_node: jsep.Expression, context: object, options?: EvaluateOptions): Promise<any>;
-declare function compile(expression: string | jsep.Expression): (context: object) => any;
-declare function compileAsync(expression: string | jsep.Expression): (context: object) => Promise<any>;
+declare function compile(expression: string | jsep.Expression): (context: object, options: EvaluateOptions) => any;
+declare function compileAsync(expression: string | jsep.Expression): (context: object, options: EvaluateOptions) => Promise<any>;
 declare function addUnaryOp(operator: string, _function: unaryCallback): void;
 declare function addBinaryOp(operator: string, precedence_or_fn: number | binaryCallback, _function: binaryCallback): void;
 export { jsep as parse, evaluate as eval, evalAsync, compile, compileAsync, addUnaryOp, addBinaryOp };
